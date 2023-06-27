@@ -1,0 +1,31 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.dom.json",
+  "include": ["env.d.ts", "src/**/*", "src/**/*.vue", "src/**/*.ts", "config/**/*.ts"],
+  "exclude": ["src/**/__tests__/*"],
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext", // 使用最新的js语法
+    "moduleResolution": "node", // 导入第三方包时会用commonjs规范解析
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowSyntheticDefaultImports": true,
+    "strictFunctionTypes": false,
+    "jsx": "preserve",
+    "baseUrl": ".",
+    "allowJs": true,
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "experimentalDecorators": true,
+    "lib": ["dom", "esnext"], // ts默认项目环境不再es6,所以使用es方法会报错，这里指定es环境
+    "types": ["vite/client"],
+    "typeRoots": ["./node_modules/@types/", "./types"],
+    "noImplicitAny": false,
+    "skipLibCheck": true,
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  }
+}
